@@ -15,22 +15,23 @@ const features = [
     icon: "settings",
     title: "Highly Customizable",
     description: "Full control over layouts, styling, fonts, and content structure. Create exactly what you need with our flexible templating system."
-  },
-  {
-    icon: "code",
-    title: "Developer Friendly",
-    description: "Simple REST API with comprehensive SDKs for popular languages. Get started in minutes with detailed documentation."
-  },
-  {
-    icon: "shield",
-    title: "Enterprise Security",
-    description: "SOC 2 compliant with end-to-end encryption. Your sensitive data is protected with industry-standard security measures."
-  },
-  {
-    icon: "globe",
-    title: "Global CDN",
-    description: "Lightning-fast delivery worldwide with our distributed infrastructure. Consistent performance regardless of location."
   }
+  // ,
+  // {
+  //   icon: "code",
+  //   title: "Developer Friendly",
+  //   description: "Simple REST API with comprehensive SDKs for popular languages. Get started in minutes with detailed documentation."
+  // },
+  // {
+  //   icon: "shield",
+  //   title: "Enterprise Security",
+  //   description: "SOC 2 compliant with end-to-end encryption. Your sensitive data is protected with industry-standard security measures."
+  // },
+  // {
+  //   icon: "globe",
+  //   title: "Global CDN",
+  //   description: "Lightning-fast delivery worldwide with our distributed infrastructure. Consistent performance regardless of location."
+  // }
 ];
 
 const getIconSVG = (iconName: string) => {
@@ -49,8 +50,8 @@ const getIconSVG = (iconName: string) => {
 <section id="features" class="py-20 bg-background">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold mb-4">
-        Everything you need for <span class="text-transparent bg-gradient-primary bg-clip-text">PDF generation</span>
+      <h2 class="text-7xl font-bold mb-4">
+        Everything you need for <span class="text-[#046C95] ">PDF generation</span>
       </h2>
       <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
         Powerful features designed to handle any PDF generation scenario, from simple documents to complex enterprise workflows.
@@ -59,10 +60,10 @@ const getIconSVG = (iconName: string) => {
     
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {features.map((feature) => (
-        <div class="rounded-lg border border-border/50 bg-card text-card-foreground shadow-sm hover:shadow-card transition-all duration-300 group">
+        <div class="rounded-lg border border-gray-300 bg-card text-card-foreground shadow-sm hover:shadow-card transition-all duration-300 group">
           <div class="flex flex-col space-y-1.5 p-6">
-            <div class="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-12 h-12 bg-[#046C95] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6 text-primary-foreground" fill="none" stroke="#FFF" viewBox="0 0 24 24">
                 <Fragment set:html={getIconSVG(feature.icon)} />
               </svg>
             </div>

@@ -1,0 +1,83 @@
+---
+// UseCases.astro
+const useCases = [
+  {
+    icon: "receipt",
+    title: "Invoices & Receipts",
+    description: "Generate professional invoices and receipts with custom branding and automatic calculations.",
+    features: ["Custom templates", "Tax calculations", "Multiple currencies", "Automated numbering"]
+  },
+  {
+    icon: "document-report",
+    title: "Reports & Analytics",
+    description: "Create detailed reports with charts, graphs, and dynamic data visualization.",
+    features: ["Chart integration", "Data binding", "Scheduled generation", "Multi-format export"]
+  },
+  {
+    icon: "certificate",
+    title: "Certificates & Diplomas",
+    description: "Design and generate certificates, diplomas, and awards with digital signatures.",
+    features: ["Digital signatures", "Batch processing", "Variable data", "Security features"]
+  },
+  {
+    icon: "contract",
+    title: "Contracts & Legal",
+    description: "Generate contracts, agreements, and legal documents with dynamic content.",
+    features: ["Template library", "E-signature ready", "Version control", "Compliance tools"]
+  }
+];
+
+function getIconSVG(iconName: string): string {
+  const icons: Record<string, string> = {
+    "receipt": "M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M1.05 3.05a1 1 0 011.414 0l.7.7A1 1 0 014 5v2h14V5a1 1 0 01.837-1.243l.7-.7a1 1 0 111.414 1.414L20.243 5.207A3 3 0 0122 8v11a3 3 0 01-3 3H5a3 3 0 01-3-3V8a3 3 0 011.757-2.793L2.464 4.464a1 1 0 01-.707-1.707z",
+    "document-report": "M9 2a1 1 0 000 2h2a1 1 0 100-2H9z M4 5a2 2 0 012-2v1a1 1 0 001 1h6a1 1 0 001-1V3a2 2 0 012 2v6h-2V9a1 1 0 10-2 0v2H8V9a1 1 0 10-2 0v2H4V5z M6 15a1 1 0 011-1h8a1 1 0 110 2H7a1 1 0 01-1-1z M6 19a1 1 0 011-1h8a1 1 0 110 2H7a1 1 0 01-1-1z",
+    "certificate": "M4 3a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H8l4-8 4 8z",
+    "contract": "M9 2a1 1 0 000 2h2a1 1 0 100-2H9z M4 5a2 2 0 012-2v1a1 1 0 001 1h6a1 1 0 001-1V3a2 2 0 012 2v6h-2V9a1 1 0 10-2 0v2H8V9a1 1 0 10-2 0v2H4V5z"
+  };
+  return icons[iconName] || icons["document-report"];
+}
+---
+
+<section class="py-20 bg-background">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-4">
+        Endless Possibilities
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+        From simple receipts to complex reports, scriptPDF adapts to your specific use case with powerful customization options.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {useCases.map((useCase) => (
+        <div class="group p-8 rounded-2xl bg-card border border-gray-400  transition-all duration-300 hover:shadow-card">
+          <div class="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
+              <path d={getIconSVG(useCase.icon)}/>
+            </svg>
+          </div>
+          
+          <h3 class="text-xl font-bold text-foreground mb-3">
+            {useCase.title}
+          </h3>
+          
+          <p class="text-muted-foreground mb-6 leading-relaxed">
+            {useCase.description}
+          </p>
+          
+          <ul class="space-y-2">
+            {useCase.features.map((feature) => (
+              <li class="flex items-center text-sm">
+                <svg class="w-4 h-4 text-primary mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-foreground">{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

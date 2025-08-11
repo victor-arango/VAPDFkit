@@ -12,7 +12,7 @@ const styles = `
   .comparisonSection {
     position: relative;
     width: 100%;
-    max-width: 500px; /* Ajusta según el tamaño deseado */
+    max-width: 700px; /* Ajusta según el tamaño deseado */
     aspect-ratio: 16 / 9; /* Mantiene la proporción de la imagen */
     overflow: hidden;
   }
@@ -44,7 +44,9 @@ const Hero: FC = () => {
     if (!section) return;
 
     const afterImage = section.querySelector(".afterImage") as HTMLElement;
-    const afterImageImg = section.querySelector(".afterImage img") as HTMLImageElement;
+    const afterImageImg = section.querySelector(
+      ".afterImage img"
+    ) as HTMLImageElement;
 
     // Crear timeline de GSAP
     const tl = gsap.timeline({ paused: true });
@@ -64,7 +66,9 @@ const Hero: FC = () => {
     let endPosition = "bottom 40%"; // Valor por defecto
 
     // Detectar si el dispositivo soporta hover y tiene ancho suficiente (escritorio)
-    const isDesktop = window.matchMedia("(hover: hover) and (min-width: 769px)").matches;
+    const isDesktop = window.matchMedia(
+      "(hover: hover) and (min-width: 769px)"
+    ).matches;
 
     if (isDesktop) {
       // Posiciones para escritorio (hover)
@@ -106,58 +110,62 @@ const Hero: FC = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 z-0"
-    style={{
-      background: "#ffffff",
-      backgroundImage: `
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          background: "#ffffff",
+          backgroundImage: `
         radial-gradient(
           circle at top center,
-          rgba(173, 109, 244, 0.5),
+          rgba(4, 108, 149, 0.2),
           transparent 70%
         )
       `,
-      filter: "blur(80px)",
-      backgroundRepeat: "no-repeat",
-    }}
-  />
-      
+          filter: "blur(80px)",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+{/* rgba(239, 238, 243, 1), */}
       <div className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center relative z-10">
         <div className="space-y-8">
           <div className="space-y-4">
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-              Generate <span className=" text-purple-600">dynamic PDFs</span> under one hood
+            <h1 className="font-sans-bold  text-5xl sm:text-6xl lg:text-6xl xl:text-7xl leading-tight tracking-tight text-gray-900 max-w-1xl px-4 mx-auto">
+              Generate <span className="text-[#046C95]">dynamic PDFs</span>{" "}
+              under one hood
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-              Your ultimate gateway to PDF generation. Create stunning documents on-demand and in batch mode with complete customization control.
+
+            <p className="text-3xl text-muted-foreground leading-tight max-w-3xl">
+              Your ultimate gateway to PDF generation. Create stunning documents
+              on-demand and in batch mode with complete customization control.
             </p>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">
+            <button className="bg-[#046C95] text-white px-4 py-2 rounded-lg cursor-pointer">
               Get Started
             </button>
-            <button className="border-primary/20 hover:bg-primary/5">
+            <button className=" bg-[#333333] text-white px-2 py-1 rounded-md ">
               View Documentation
             </button>
           </div>
-          
+
           {/* Feature highlights */}
-          <div className="flex flex-wrap gap-6 pt-4">
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Zap className="w-5 h-5 text-primary" />
+          <div className="flex flex-wrap gap-6 pt-4 text-[18px]">
+            <div className="flex items-center gap-2 ">
+              <Zap color="#046C95" className="  w-5 h-5 text-primary" />
               <span>On-demand generation</span>
             </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <FileText className="w-5 h-5 text-primary" />
+            <div className="flex items-center gap-2 ">
+              <FileText color="#046C95" className="w-5 h-5 text-primary" />
               <span>Batch processing</span>
             </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Settings className="w-5 h-5 text-primary" />
+            <div className="flex items-center gap-2 ">
+              <Settings color="#046C95" className="w-5 h-5 text-primary" />
               <span>Fully customizable</span>
             </div>
           </div>
         </div>
-        
+
         {/* Right side - Visual element */}
         <div className="relative">
           <div
@@ -170,10 +178,7 @@ const Hero: FC = () => {
               className="beforeImage"
             />
             <div className="afterImage">
-              <img
-                src="/ImageHeroAfter.png"
-                alt="Ilustración Después"
-              />
+              <img src="/ImageHeroAfter.png" alt="Ilustración Después" />
             </div>
           </div>
         </div>
