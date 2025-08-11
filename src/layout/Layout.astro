@@ -4,15 +4,32 @@ import '../styles/global.css';
 const { title  } = Astro.props;
 ---
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  
+  <style is:global >
+    @font-face {
+      font-family: 'Saans TRIAL Bold';
+      src: url('/fonts/SaansTRIAL-Bold.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+}
+    @font-face {
+      font-family: 'Saans TRIAL Light';
+      src: url('/fonts/SaansTRIAL-Light.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+}
+  </style>
 </head>
-<body>
-    <slot/>
+<body class="min-h-screen bg-background text-foreground">
+<slot/>
+
 </body>
 </html>

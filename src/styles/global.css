@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+@theme {
+
+     --font-sans: 'Saans TRIAL Light', 'sans-serif';
+     --font-sans-bold: 'Saans TRIAL Bold', 'sans-serif';
+     --bg-color-primary: '#046C95';
+
+}
