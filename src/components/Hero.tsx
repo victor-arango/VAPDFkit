@@ -130,7 +130,7 @@ const Hero: FC = () => {
         <div className="space-y-8">
           <div className="space-y-4">
             <h1 className="font-sans-bold  text-5xl sm:text-6xl lg:text-6xl xl:text-7xl leading-tight tracking-tight text-gray-900 max-w-1xl px-4 mx-auto">
-              Generate <span className="text-[#046C95]">dynamic PDFs</span>{" "}
+              Generate <span className="text-[#046C95]">Dynamic PDFs</span>{" "}
               under one hood
             </h1>
 
